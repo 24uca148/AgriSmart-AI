@@ -20,4 +20,4 @@ ENV PYTHON_BIN=python3
 
 EXPOSE 5000
 
-CMD ["sh", "-c", "npm run db:push && npm start"]
+CMD ["npm", "start"]
