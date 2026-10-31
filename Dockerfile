@@ -14,7 +14,7 @@ COPY . .
 RUN pip3 install --break-system-packages --no-cache-dir numpy==1.26.0 pandas==2.1.1 scikit-learn==1.3.2
 
 RUN npm run build
-
+RUN cp node_modules/connect-pg-simple/table.sql dist/table.sql
 ENV NODE_ENV=production
 ENV PYTHON_BIN=python3
 
