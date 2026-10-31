@@ -88,7 +88,7 @@ app.use((req, res, next) => {
         tableName: "session",
       })
     : new (createMemoryStore(session))({ checkPeriod: 86400000 }); // prune expired entries every 24h
-
+  app.set("trust proxy", 1);
   app.use(
     session({
       secret: process.env.SESSION_SECRET || "agrismart-dev-secret-change-me",
