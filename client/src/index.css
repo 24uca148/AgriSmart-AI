@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&family=Noto+Sans+Tamil:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'DM Sans', sans-serif;
+    --font-display: 'Outfit', sans-serif;
+
+    /* Agricultural Theme Palette */
+    --background: 140 20% 98%;
+    --foreground: 144 30% 15%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 144 30% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 144 30% 15%;
+    
+    /* Vibrant Agricultural Green */
+    --primary: 142 70% 29%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 140 20% 90%;
+    --secondary-foreground: 142 70% 29%;
+    
+    --muted: 140 10% 92%;
+    --muted-foreground: 140 15% 45%;
+    
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 20% 88%;
+    --input: 140 20% 88%;
+    --ring: 142 70% 29%;
+
+    --radius: 1rem;
+    
+    /* Chart Colors */
+    --chart-1: 142 70% 29%;
+    --chart-2: 38 92% 50%;
+    --chart-3: 199 89% 48%;
+    --chart-4: 340 82% 52%;
+    --chart-5: 280 65% 60%;
+  }
+
+  .dark {
+    --background: 144 30% 8%;
+    --foreground: 140 20% 96%;
+    
+    --card: 144 30% 12%;
+    --card-foreground: 140 20% 96%;
+    
+    --popover: 144 30% 12%;
+    --popover-foreground: 140 20% 96%;
+    
+    --primary: 142 70% 45%;
+    --primary-foreground: 144 30% 8%;
+    
+    --secondary: 144 20% 18%;
+    --secondary-foreground: 140 20% 96%;
+    
+    --muted: 144 20% 18%;
+    --muted-foreground: 140 15% 65%;
+    
+    --accent: 38 92% 55%;
+    --accent-foreground: 144 30% 8%;
+    
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 140 20% 96%;
+    
+    --border: 144 20% 18%;
+    --input: 144 20% 18%;
+    --ring: 142 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+}
+
+/* Custom UI Utilities */
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg shadow-black/5 dark:bg-black/40 dark:border-white/10;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+}
